@@ -1,0 +1,3 @@
+# /* vim: set filetype=sh : */
+
+export DOCKER_HOST="ssh://docker.$HOST"

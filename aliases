@@ -1,0 +1,3 @@
+# /* vim: set filetype=sh : */
+
+alias ll="ls -alh"
