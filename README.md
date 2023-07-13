@@ -4,7 +4,7 @@ These should be sourced by the in use shell, whenever appropriate. For example:
 
 Checkout this repo into `$HOME/.shell`
 
-`git clone git@github.com:lily-mosquitoes/.shell $HOME/.shell`
+`git clone git@github.com:lily-mosquitoes/.shell.git $HOME/.shell`
 
 ## zsh
 `.zshenv` (always sourced)
