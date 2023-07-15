@@ -1,3 +1,12 @@
 # /* vim: set filetype=sh : */
 
 alias ll="ls -alh"
+
+function backup () {
+    case "$1" in
+    	d|daily) echo "starting backup"; /bin/sh ~/Scripts/backup.sh -i ~/Scripts/.backup_sources -o ~/Backups/Daily; echo "done";;
+    	w|weekly) echo "starting backup"; /bin/sh ~/Scripts/backup.sh -i ~/Scripts/.backup_sources -o ~/Backups/Weekly; echo "done";;
+    	m|monthly) echo "starting backup"; /bin/sh ~/Scripts/backup.sh -i ~/Scripts/.backup_sources -o ~/Backups/Monthly-$(date +%Y-%m) -c; echo "done";;
+	*) echo "Provide a valid argument: daily | weekly | monthly";;
+    esac
+}
