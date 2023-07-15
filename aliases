@@ -21,7 +21,7 @@ function backup () {
 	;;
         unique)
 	    echo "starting backup"
-	    /bin/sh ~/Scripts/backup.sh -i ~/Scripts/.backup_sources -o ~/Backups/Unique-$(date +%Y-%m-%d_%H:%m) -c
+	    /bin/sh ~/Scripts/backup.sh -i ~/Scripts/.backup_sources -o ~/Backups/Unique-$(date +%Y-%m-%d_%H:%M) -c
 	    echo "done"
 	;;
 	*)
