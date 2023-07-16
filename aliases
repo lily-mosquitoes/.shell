@@ -5,24 +5,16 @@ alias ll="ls -alh"
 function backup () {
     case "$1" in
     	daily|d)
-	    echo "starting backup"
-	    /bin/sh ~/Scripts/backup.sh -i ~/Scripts/.backup_sources -o ~/Backups/Daily
-	    echo "done"
+	    /bin/sh ~/Scripts/backup.sh -i ~/Scripts/.backup_sources -o ~/Backups/Daily | tee -a ~/.logs/$HOST.backup.log
 	;;
     	weekly|w)
-	    echo "starting backup"
-	    /bin/sh ~/Scripts/backup.sh -i ~/Scripts/.backup_sources -o ~/Backups/Weekly
-	    echo "done"
+	    /bin/sh ~/Scripts/backup.sh -i ~/Scripts/.backup_sources -o ~/Backups/Weekly | tee -a ~/.logs/$HOST.backup.log
 	;;
     	monthly|m)
-	    echo "starting backup"
-	    /bin/sh ~/Scripts/backup.sh -i ~/Scripts/.backup_sources -o ~/Backups/Monthly-$(date +%Y-%m) -c
-	    echo "done"
+	    /bin/sh ~/Scripts/backup.sh -i ~/Scripts/.backup_sources -o ~/Backups/Monthly-$(date +%Y-%m) -c | tee -a ~/.logs/$HOST.backup.log
 	;;
         unique)
-	    echo "starting backup"
-	    /bin/sh ~/Scripts/backup.sh -i ~/Scripts/.backup_sources -o ~/Backups/Unique-$(date +%Y-%m-%d_%H:%M:%S) -c
-	    echo "done"
+	    /bin/sh ~/Scripts/backup.sh -i ~/Scripts/.backup_sources -o ~/Backups/Unique-$(date +%Y-%m-%d_%H:%M:%S) -c | tee -a ~/.logs/$HOST.backup.log
 	;;
 	*)
 	    echo "Provide a valid argument: daily | weekly | monthly | unique"
